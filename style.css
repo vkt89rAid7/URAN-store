@@ -1,0 +1,887 @@
+/* =========================================================
+   1. БАЗОВІ СТИЛІ ТА ПАЛІТРА
+   Палітра: Білий #ffffff, Світло-сірий #cccccc, 
+   Графітовий #1d1d1b, Чорний #000000, 
+   Зелений #127c00, Синій #1b54af
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Головний шрифт сайту — Montserrat */
+    background-color: #ffffff;
+    color: #1d1d1b;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Кнопки */
+.btn-primary {
+    background-color: #1b54af;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #133c80;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.btn-outline::after {
+    display: none !important; /* Вимикаємо створення чорної лінії */
+}
+
+.btn-outline:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.btn-outline:active, .btn-outline:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* =========================================================
+   2. TOP NAV (Верхня темна панель)
+   ========================================================= */
+.top-nav {
+    background-color: #1d1d1b;
+    color: #cccccc;
+    font-size: 12px;
+    padding: 8px 0;
+}
+
+.top-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav a {
+    color: #cccccc;
+    margin-right: 15px;
+}
+
+.top-nav a:hover {
+    color: #ffffff;
+}
+
+.lang-switch {
+    margin-right: 15px;
+    color: #666;
+}
+
+.lang-switch .active {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* АКЦЕНТНЕ ПОСИЛАННЯ LENOVO BUSINESS STORE */
+.top-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.business-store-link {
+    position: relative;
+    padding-left: 15px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.business-store-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background-color: #666666;
+}
+
+/* ОКРЕМІ ОБ'ЄКТИ: ВХІД / РЕЄСТРАЦІЯ (AUTH LINKS) */
+.auth-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.auth-link {
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.top-nav .auth-link {
+    color: #cccccc !important;
+}
+
+.top-nav .auth-link:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.auth-divider {
+    color: #666666;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* =========================================================
+   3. HEADER & SEARCH (Світла шапка)
+   ========================================================= */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    position: static; /* Шапка гортається разом із сайтом, не липне */
+    top: auto;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    gap: 30px;
+}
+
+/* ОНОВЛЕНИЙ ГРАФІЧНИЙ ЛОГОТИП */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.logo-img {
+    width: 160px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.02);
+}
+
+/* Рядок пошуку Lenovo Style */
+.search-bar {
+    flex-grow: 1;
+    max-width: 600px;
+    display: flex;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #1d1d1b;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #1b54af;
+}
+
+.search-bar button {
+    background-color: #1b54af;
+    color: #ffffff;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.search-bar button:hover {
+    background-color: #133c80;
+}
+
+/* =========================================================
+   4. ОНОВЛЕНА НАВІГАЦІЯ ТА MEGA MENU
+   ========================================================= */
+.category-nav {
+    border-top: 1px solid #cccccc;
+    padding: 0; 
+    position: relative; /* Точка відліку для вирівнювання мега-меню */
+    background-color: #ffffff; 
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    position: static;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff !important; 
+    border-top: 1px solid #cccccc;
+    border-bottom: 2px solid #1d1d1b;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); 
+    transition: all 0.3s ease; 
+    z-index: 99999 !important;
+}
+
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    gap: 20px;
+    background-color: #ffffff !important;
+}
+
+.nav-link, .nav-menu a {
+    color: #1d1d1b !important; 
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px; 
+}
+
+.nav-link::after, .nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-item:hover .nav-link::after,
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-link:active, .nav-link:visited,
+.nav-menu a:active, .nav-menu a:visited {
+    color: #1d1d1b !important;
+    text-decoration: none;
+}
+
+.mega-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 22%;
+    min-width: 200px;
+}
+
+.mega-column h4 {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cccccc; 
+}
+
+.mega-column a {
+    color: #1d1d1b !important;
+    font-size: 14px;         
+    text-decoration: none;
+    margin-bottom: 12px;
+    display: block;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.mega-column a:hover {
+    color: #1d1d1b !important;
+    text-decoration: none !important;
+}
+
+.view-all {
+    color: #1b54af !important;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Рекламна права колонка */
+.promo-column {
+    flex: 1 1 28%;
+    min-width: 260px;        
+}
+
+.promo-box {
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    padding: 25px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.promo-box h4 {
+    border-bottom: none !important;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.promo-box p {
+    font-size: 13px;
+    color: #1d1d1b;
+    margin-bottom: 20px;
+}
+
+.promo-box .btn-primary {
+    background-color: #1b54af !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: inline-block;
+    position: relative;
+}
+
+.promo-box .btn-primary::after {
+    display: none !important;
+}
+
+.promo-box .btn-primary:hover {
+    background-color: #133c80 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.promo-box .btn-primary:active, 
+.promo-box .btn-primary:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* =========================================================
+   5. ГОЛОВНИЙ БАНЕР (HERO)
+   ========================================================= */
+.hero {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    width: 50%;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Графіка ноутбука */
+.hero-graphic {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.laptop-screen {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    background: linear-gradient(135deg, #1b54af, #1d1d1b);
+    border: 16px solid #1d1d1b;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #127c00;
+    font-size: 42px;
+    letter-spacing: 4px;
+}
+
+.laptop-base {
+    width: 100%;
+    max-width: 560px;
+    height: 14px;
+    background-color: #cccccc;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 4px solid #1d1d1b;
+}
+
+/* =========================================================
+   6. ШВИДКІ КАТЕГОРІЇ (Quick Links) — ПОВЕРНЕННЯ ОРИГІНАЛУ
+   ========================================================= */
+.quick-links {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #1d1d1b;
+}
+
+.quick-links-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.quick-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1d1d1b;
+    width: 140px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Ефект преміального підйому картки вгору та зміни кольору тексту */
+.quick-card:hover {
+    transform: translateY(-5px);
+    color: #1b54af;
+}
+
+/* Повертаємо стилізацію під круглі білі диски-іконки */
+.quick-icon {
+    display: flex !important; /* Насильно повертаємо відображення */
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.quick-card span {
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+}
+/* =========================================================
+   7. КАТАЛОГ ПРОДУКЦІЇ ТА КАРУСЕЛЬ (ЧИСТА ОДНОРІДНА СТРУКТУРА)
+   ========================================================= */
+.store-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-container input[type="radio"] {
+    display: none !important;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden !important; 
+    position: relative;
+}
+
+/* Горизонтальна лінійна рейка каруселі */
+.carousel-track {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 200%; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Сторінка каруселі (3 елементи строго в ряд) */
+.carousel-page {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 50%;
+    gap: 30px;
+    flex-shrink: 0 !important;
+    padding: 10px 5px;
+}
+
+/* Сама картка товару */
+.carousel-page .product-card {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 25px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #1d1d1b;
+}
+
+.badge-eco {
+    background-color: #127c00;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 2px;
+    z-index: 5;
+}
+
+/* Блок фотографії ноутбука */
+.product-image {
+    width: 100% !important;
+    height: 200px !important;
+    background-color: #ffffff; 
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    overflow: hidden !important;
+    position: relative;
+}
+
+/* Жорсткий захист картинок та тексту Alt від розпирання */
+.prod-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: transform 0.3s ease;
+    font-size: 11px;            
+    color: #666666;             
+    text-align: center;
+    word-break: break-all;      
+}
+
+.product-card:hover .prod-img {
+    transform: scale(1.05);
+}
+
+/* Внутрішній інформаційний блок картки */
+.product-info {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: space-between !important;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin: 15px 0 10px 0;
+}
+
+.product-specs {
+    list-style: none;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.product-specs li {
+    font-size: 13px;
+    color: #1d1d1b;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-specs li::before {
+    content: "•";
+    color: #1b54af;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.product-price-block {
+    border-top: 1px solid #cccccc;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.price-current {
+    font-size: 22px;
+    font-weight: 800;
+    color: #000000;
+}
+
+.price-savings {
+    font-size: 12px;
+    color: #127c00;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Логіка перемикання радіокнопок */
+#page1:checked ~ .carousel-viewport .carousel-track {
+    transform: translateX(0%);
+}
+
+#page2:checked ~ .carousel-viewport .carousel-track {
+    transform: translateX(-50%);
+}
+
+/* Навігаційні крапки під каруселлю */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.dot-label {
+    width: 12px;
+    height: 12px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot-label:hover {
+    background-color: #1b54af;
+}
+
+#page1:checked ~ .carousel-dots #dot1,
+#page2:checked ~ .carousel-dots #dot2 {
+    background-color: #1b54af;
+    transform: scale(1.25); 
+}
+
+/* =========================================================
+   8. ФУТЕР
+   ========================================================= */
+.footer {
+    background-color: #1d1d1b;
+    color: #cccccc;
+    padding: 60px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    display: block;
+    color: #cccccc;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid #000000;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+/* СУЧАСНІ SVG ІКОНКИ СОЦМЕРЕЖ У ФУТЕРІ */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    text-decoration: none !important;
+}
+
+.svg-social {
+    width: 20px;
+    height: 20px;
+    fill: #cccccc;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon-link::after {
+    display: none !important;
+}
+
+.social-icon-link:hover .svg-social {
+    fill: #1b54af;
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   9. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ
+   ========================================================= */
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero-graphic {
+        width: 100%;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .carousel-viewport {
+        overflow-x: auto !important; /* На планшетах дозволяємо скрол пальцем */
+    }
+    .carousel-track {
+        width: 200%;
+    }
+    .carousel-page {
+        width: 50%;
+        flex-direction: row !important;
+        gap: 15px;
+    }
+    .carousel-dots {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-nav, .top-nav-left {
+        display: none;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
