@@ -1,9 +1,4 @@
-/* =========================================================
-   1. БАЗОВІ СТИЛІ ТА ПАЛІТРА
-   Палітра: Білий #ffffff, Світло-сірий #cccccc, 
-   Графітовий #1d1d1b, Чорний #000000, 
-   Зелений #127c00, Синій #1b54af
-   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +25,7 @@ a {
     transition: color 0.2s ease;
 }
 
-/* Кнопки */
+
 .btn-primary {
     background-color: #1b54af;
     color: #ffffff;
@@ -65,7 +60,7 @@ a {
 }
 
 .btn-outline::after {
-    display: none !important; /* Вимикаємо створення чорної лінії */
+    display: none !important; 
 }
 
 .btn-outline:hover {
@@ -79,9 +74,7 @@ a {
     text-decoration: none !important;
 }
 
-/* =========================================================
-   2. TOP NAV (Верхня темна панель)
-   ========================================================= */
+
 .top-nav {
     background-color: #1d1d1b;
     color: #cccccc;
@@ -114,7 +107,7 @@ a {
     font-weight: 700;
 }
 
-/* АКЦЕНТНЕ ПОСИЛАННЯ LENOVO BUSINESS STORE */
+
 .top-nav-left {
     display: flex;
     align-items: center;
@@ -138,7 +131,7 @@ a {
     background-color: #666666;
 }
 
-/* ОКРЕМІ ОБ'ЄКТИ: ВХІД / РЕЄСТРАЦІЯ (AUTH LINKS) */
+
 .auth-buttons {
     display: inline-flex;
     align-items: center;
@@ -167,13 +160,11 @@ a {
     user-select: none;
 }
 
-/* =========================================================
-   3. HEADER & SEARCH (Світла шапка)
-   ========================================================= */
+
 .main-header {
     background-color: #ffffff;
     border-bottom: 1px solid #cccccc;
-    position: static; /* Шапка гортається разом із сайтом, не липне */
+    position: static; 
     top: auto;
     z-index: 1000;
 }
@@ -186,7 +177,7 @@ a {
     gap: 30px;
 }
 
-/* ОНОВЛЕНИЙ ГРАФІЧНИЙ ЛОГОТИП */
+
 .logo {
     display: inline-flex;
     align-items: center;
@@ -205,7 +196,7 @@ a {
     transform: scale(1.02);
 }
 
-/* Рядок пошуку Lenovo Style */
+
 .search-bar {
     flex-grow: 1;
     max-width: 600px;
@@ -241,13 +232,11 @@ a {
     background-color: #133c80;
 }
 
-/* =========================================================
-   4. ОНОВЛЕНА НАВІГАЦІЯ ТА MEGA MENU
-   ========================================================= */
+
 .category-nav {
     border-top: 1px solid #cccccc;
     padding: 0; 
-    position: relative; /* Точка відліку для вирівнювання мега-меню */
+    position: relative; 
     background-color: #ffffff; 
 }
 
@@ -414,9 +403,7 @@ a {
     text-decoration: none !important;
 }
 
-/* =========================================================
-   5. ГОЛОВНИЙ БАНЕР (HERO)
-   ========================================================= */
+
 .hero {
     background-color: #000000;
     color: #ffffff;
@@ -455,7 +442,7 @@ a {
     gap: 15px;
 }
 
-/* Графіка ноутбука */
+
 .hero-graphic {
     width: 45%;
     display: flex;
@@ -489,9 +476,7 @@ a {
     border-bottom: 4px solid #1d1d1b;
 }
 
-/* =========================================================
-   6. ШВИДКІ КАТЕГОРІЇ (Quick Links) — ПОВЕРНЕННЯ ОРИГІНАЛУ
-   ========================================================= */
+
 .quick-links {
     padding: 40px 0;
     background-color: #f9f9f9;
@@ -514,15 +499,15 @@ a {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* Ефект преміального підйому картки вгору та зміни кольору тексту */
+
 .quick-card:hover {
     transform: translateY(-5px);
     color: #1b54af;
 }
 
-/* Повертаємо стилізацію під круглі білі диски-іконки */
+
 .quick-icon {
-    display: flex !important; /* Насильно повертаємо відображення */
+    display: flex !important; 
     width: 80px;
     height: 80px;
     background-color: #ffffff;
@@ -540,9 +525,7 @@ a {
     font-size: 14px;
     text-align: center;
 }
-/* =========================================================
-   7. КАТАЛОГ ПРОДУКЦІЇ ТА КАРУСЕЛЬ (ЧИСТА ОДНОРІДНА СТРУКТУРА)
-   ========================================================= */
+
 .store-section {
     padding: 60px 0;
     background-color: #ffffff;
@@ -572,7 +555,7 @@ a {
     position: relative;
 }
 
-/* Горизонтальна лінійна рейка каруселі */
+
 .carousel-track {
     display: flex !important;
     flex-direction: row !important;
@@ -580,7 +563,7 @@ a {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Сторінка каруселі (3 елементи строго в ряд) */
+
 .carousel-page {
     display: flex !important;
     flex-direction: row !important;
@@ -591,7 +574,7 @@ a {
     padding: 10px 5px;
 }
 
-/* Сама картка товару */
+
 .carousel-page .product-card {
     flex: 1 1 0% !important;
     min-width: 0 !important;
@@ -625,7 +608,7 @@ a {
     z-index: 5;
 }
 
-/* Блок фотографії ноутбука */
+
 .product-image {
     width: 100% !important;
     height: 200px !important;
@@ -638,7 +621,7 @@ a {
     position: relative;
 }
 
-/* Жорсткий захист картинок та тексту Alt від розпирання */
+
 .prod-img {
     max-width: 100% !important;
     max-height: 100% !important;
@@ -657,7 +640,7 @@ a {
     transform: scale(1.05);
 }
 
-/* Внутрішній інформаційний блок картки */
+
 .product-info {
     display: flex !important;
     flex-direction: column !important;
@@ -713,7 +696,7 @@ a {
     margin-top: 4px;
 }
 
-/* Логіка перемикання радіокнопок */
+
 #page1:checked ~ .carousel-viewport .carousel-track {
     transform: translateX(0%);
 }
@@ -722,7 +705,7 @@ a {
     transform: translateX(-50%);
 }
 
-/* Навігаційні крапки під каруселлю */
+
 .carousel-dots {
     display: flex;
     justify-content: center;
@@ -749,9 +732,7 @@ a {
     transform: scale(1.25); 
 }
 
-/* =========================================================
-   8. ФУТЕР
-   ========================================================= */
+
 .footer {
     background-color: #1d1d1b;
     color: #cccccc;
@@ -798,7 +779,7 @@ a {
     text-decoration: none !important;
 }
 
-/* СУЧАСНІ SVG ІКОНКИ СОЦМЕРЕЖ У ФУТЕРІ */
+
 .social-links {
     display: flex;
     align-items: center;
@@ -830,9 +811,7 @@ a {
     transform: scale(1.1);
 }
 
-/* =========================================================
-   9. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ
-   ========================================================= */
+
 @media (max-width: 992px) {
     .header-container {
         flex-direction: column;
@@ -857,7 +836,7 @@ a {
     }
     
     .carousel-viewport {
-        overflow-x: auto !important; /* На планшетах дозволяємо скрол пальцем */
+        overflow-x: auto !important; 
     }
     .carousel-track {
         width: 200%;
